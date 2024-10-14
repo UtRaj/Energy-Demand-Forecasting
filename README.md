@@ -1,27 +1,53 @@
-# Energy Consumption Prediction using Machine Learning
-## Time Series Forecasting (LSTM)
+# Electricity Consumption Forecasting in Finland using LSTM
 
-This research was done as part of a research seminar course at LAB University of Applied Science (fall 2022).
-The report was written using the thesis template of LAB University.
+This project demonstrates a time series forecasting model for electricity consumption in Finland using LSTM (Long Short-Term Memory) neural network. 
 
-### Abstract
+## Overview
 
-The purpose of this research was to predict energy consumption using the data of Finland's transmission system operator. 
-The objective of this project was to test if a machine learning model can yield good enough results in a complex forecasting problem, 
-exploring machine learning techniques and developing a data-driven model for forecasting energy.
-The data contained 6-year hourly electrical consumption in Finland, and it is a univariate time series, as it is seasonal. 
-We used a long-short term memory (LSTM) model to train the data.
-The model was evaluated using root mean squared error (RMSE) to be directly comparable to energy readings in the data.
-The result shows that electricity consumption can be predicted using machine learning algorithms so we can use the results to deploy renewable energy, 
-plan for high/low load days, and reduce wastage from polluting on reserve standby generation.
+The goal of this project is to build and evaluate a model that can accurately predict future electricity consumption based on historical data. The model utilizes LSTM, a type of recurrent neural network well-suited for time series analysis.
 
-### Model Implementation
-The data was imported from Finland's transmission system operator as a CSV file and then exported to a GitHub repository. 
-There was a total number of 52965 observations and 5 variables in this dataset and no missing values were found. 
-The minimum load volume is 5341 MWh, and the maximum load volume is 15105 MWh along with an average volume of 9488.750519 MWh. 
-The data is univariate time series, where there is a need for one column to present time and another one to present energy consumption. 
-For predicting day consumption, data were down-sampled using resample function. 
-This function changed the data from hourly frequency to daily frequency.
-Training the LSTM model was done using the training set and the validation dataset for testing the results through the training process. 
-The learning algorithm worked through the entire training dataset 60 times (Epoch), and the model weights were updated after each batch where the batch size is 20.
+## Dataset
+
+The project utilizes an electricity consumption dataset for Finland spanning from 2016 to 2021. The dataset includes hourly electricity consumption data.
+
+## Methodology
+
+The project involves the following steps:
+
+1. **Data Exploration:** Initial analysis of the dataset to understand its structure, distribution, and patterns.
+2. **Feature Extraction:** Extraction of relevant features from the dataset, including year, month, and day.
+3. **Data Visualization:** Visualizations of electricity consumption trends over time, including yearly, monthly, and hourly breakdowns.
+4. **LSTM Model:** Building and training an LSTM model to predict future electricity consumption.
+5. **Train, Validation, and Test Dataset:** Splitting the dataset into training, validation, and testing sets.
+6. **Model Structure:** Defining the architecture of the LSTM model.
+7. **Model Training:** Training the LSTM model using the training dataset and optimizing its performance.
+8. **Model Evaluation:** Evaluating the model's performance on the validation and test datasets using metrics like Root Mean Squared Error (RMSE).
+9. **Future Forecasting:** Utilizing the trained model to forecast future electricity consumption.
+10. **Conclusion:** Summarizing the project's findings and model performance.
+
+## Code Structure
+
+The code is structured as follows:
+
+1. Importing necessary libraries (Pandas, NumPy, Matplotlib, Seaborn, Keras, TensorFlow).
+2. Loading the electricity consumption dataset.
+3. Data exploration and preprocessing.
+4. Feature engineering and data manipulation.
+5. Data visualization to understand trends and patterns.
+6. Building the LSTM model.
+7. Splitting the data into training, validation, and testing sets.
+8. Training the LSTM model.
+9. Evaluating the model's performance.
+10. Forecasting future electricity consumption.
+11. Plotting the actual consumption and model predictions.
+
+## Results
+
+The LSTM model demonstrates a reasonable accuracy in predicting electricity consumption, both for training and testing datasets. The visualizations provide a comprehensive understanding of the model's performance over time. The model can be further improved by exploring additional features and techniques.
+
+## Future Work
+
+* Experiment with different model architectures and hyperparameters.
+* Incorporate external factors (weather, holidays) to improve prediction accuracy.
+* Develop a user interface to allow users to interact with the model and visualize its predictions.
 
